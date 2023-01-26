@@ -30,6 +30,14 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <link rel="icon" href="favicon.png" type="image">
+
+    <!-- Video Play -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -82,20 +90,31 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-12">
                         <div class="slider_text text-center">
-                            <div class="shape_1 wow fadeInUp pt-5 mt-5" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img class="pt-5 mt-5" src="img/shape/rocket-9996.svg" alt="">
-                            </div>
                             <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
                                 <img src="img/shape/rocket-9996 (1).svg" alt="">
                             </div>
-                            <div class="d-flex flex-column align-items-center">
-                            <span class="wow fadeInLeft font-effect-outline font-effect-outline text-white pb-2 pt-3" data-wow-duration="1s" data-wow-delay=".3s">Startup Centre For Entrepreneurship And Innovation</span>
-                            <img class="pb-2" src="logo-r.png" style="width: 150px; height: 140px;" alt="">
+                            <div class="shape_1 wow fadeInUp pt-5" data-wow-duration="1s" data-wow-delay=".2s">
+                                <img class="" src="img/shape/rocket-9996.svg" alt="">
                             </div>
                             
-                            <h3 class="wow fadeInLeft font-effect-neon pb-4"  data-wow-duration="1s" data-wow-delay=".4s">BEATS 2023</h3>
-                            <p class="wow fadeInLeft font-effect-outline" data-wow-duration="1s" data-wow-delay=".5s" id="about">Business Entrepreneurship & Technology Summit</p>
+                            <div class="d-flex flex-column align-items-center">
+                            <span class="wow fadeInLeft font-effect-outline font-effect-outline text-white pb-2 pt-3" data-wow-duration="1s" data-wow-delay=".3s">Startup Centre For Entrepreneurship And Innovation</span>
+                            <!-- <img class="pb-2" src="logo-r.png" style="width: 150px; height: 140px;" alt=""> -->
+                            </div>
                             
+                            <h3 class="wow fadeInLeft font-effect-neon"  data-wow-duration="1s" data-wow-delay=".4s">BEATS 2023</h3>
+                            <a id="play-video" class="video-play-button" onclick="toggle();"> <span></span></a>
+                            <div class="trailer">
+                            <video src="videos/VE Project 1.mp4" controls="true"></video>
+                            <button type="button" class="btn-close bg-danger mb-5" aria-label="Close" onclick="toggle();"></button>                            
+                            </div>
+                            <p class="wow fadeInLeft font-effect-outline beats-full" data-wow-duration="1s" data-wow-delay=".5s" id="about">Business Entrepreneurship & Technology Summit</p>
+                            
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                 
+                            </div>
                         </div>
                         
                     </div>           
@@ -592,6 +611,16 @@ startup@nitdelhi.ac.in
                 nav.classList.remove('bg-dark','shadow');
             }
         });
+    </script>
+
+    <script type="text/javascript">
+        function toggle(){
+            var trailer=document.querySelector(".trailer")
+            var video = document.querySelector("video")
+            trailer.classList.toggle("active");
+            video.pause();
+            video.currentTime=0;
+        }
     </script>
 
 <script>
