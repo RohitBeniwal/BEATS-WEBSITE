@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&display=swap" rel="stylesheet">
 
@@ -38,6 +39,25 @@
         <![endif]-->
 
     <!-- header-start -->
+
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="loader">
+        <p class="pre">B</p>
+        <p class="pre">E</p>
+        <p class="pre">A</p>
+        <p class="pre">T</p>
+        <p class="pre">S</p>
+        <p class="pre">.</p>
+        <p class="pre">2</p>
+        <p class="pre">0</p>
+        <p class="pre">2</p>
+        <p class="pre">3</p>
+      </div>      
+</div>
+
+
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div class="collapse navbar-collapse space-x-2">
@@ -550,6 +570,18 @@ startup@nitdelhi.ac.in
     <script src="js/carousel.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/transitions.js"></script>
+
+    <script>
+
+
+        var loader = document.getElementById("preloader");
+        window.addEventListener('load', function(load) {
+  window.removeEventListener('load', load, false);               
+  setTimeout(function(){loader.style.display = 'none'},3000);
+
+},false);
+
+    </script>
 
     <script>
         // Set the date we're counting down to
