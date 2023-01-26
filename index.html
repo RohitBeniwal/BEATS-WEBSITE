@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/preloader.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&display=swap" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -33,6 +34,14 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <link rel="icon" href="favicon.png" type="image">
+
+    <!-- Video Play -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -41,6 +50,25 @@
         <![endif]-->
 
     <!-- header-start -->
+
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="loader">
+        <p class="pre">B</p>
+        <p class="pre">E</p>
+        <p class="pre">A</p>
+        <p class="pre">T</p>
+        <p class="pre">S</p>
+        <p class="pre">.</p>
+        <p class="pre">2</p>
+        <p class="pre">0</p>
+        <p class="pre">2</p>
+        <p class="pre">3</p>
+      </div>      
+</div>
+
+
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div class="collapse navbar-collapse space-x-2">
@@ -85,20 +113,31 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-12">
                         <div class="slider_text text-center">
-                            <div class="shape_1 wow fadeInUp pt-5 mt-5" data-wow-duration="1s" data-wow-delay=".2s">
-                                <img class="pt-5 mt-5" src="img/shape/rocket-9996.svg" alt="">
-                            </div>
                             <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
                                 <img src="img/shape/rocket-9996 (1).svg" alt="">
                             </div>
-                            <div class="d-flex flex-column align-items-center">
-                            <span class="wow fadeInLeft font-effect-outline font-effect-outline text-white pb-2 pt-3" data-wow-duration="1s" data-wow-delay=".3s">Startup Centre For Entrepreneurship And Innovation</span>
-                            <img class="pb-2" src="logo-r.png" style="width: 150px; height: 140px;" alt="">
+                            <div class="shape_1 wow fadeInUp pt-5" data-wow-duration="1s" data-wow-delay=".2s">
+                                <img class="" src="img/shape/rocket-9996.svg" alt="">
                             </div>
                             
-                            <h3 class="wow fadeInLeft font-effect-neon pb-4"  data-wow-duration="1s" data-wow-delay=".4s">BEATS 2023</h3>
-                            <p class="wow fadeInLeft font-effect-outline" data-wow-duration="1s" data-wow-delay=".5s" id="about">Business Entrepreneurship & Technology Summit</p>
+                            <div class="d-flex flex-column align-items-center">
+                            <span class="wow fadeInLeft font-effect-outline font-effect-outline text-white pb-2 pt-3" data-wow-duration="1s" data-wow-delay=".3s">Startup Centre For Entrepreneurship And Innovation</span>
+                            <!-- <img class="pb-2" src="logo-r.png" style="width: 150px; height: 140px;" alt=""> -->
+                            </div>
                             
+                            <h3 class="wow fadeInLeft font-effect-neon"  data-wow-duration="1s" data-wow-delay=".4s">BEATS 2023</h3>
+                            <a id="play-video" class="video-play-button" onclick="toggle();"> <span></span></a>
+                            <div class="trailer">
+                            <video src="videos/VE Project 1.mp4" controls="true"></video>
+                            <button type="button" class="btn-close bg-danger mb-5" aria-label="Close" onclick="toggle();"></button>                            
+                            </div>
+                            <p class="wow fadeInLeft font-effect-outline beats-full" data-wow-duration="1s" data-wow-delay=".5s" id="about">Business Entrepreneurship & Technology Summit</p>
+                            
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                 
+                            </div>
                         </div>
                         
                     </div>           
@@ -622,6 +661,18 @@ startup@nitdelhi.ac.in
     <script src="js/transitions.js"></script>
 
     <script>
+
+
+        var loader = document.getElementById("preloader");
+        window.addEventListener('load', function(load) {
+  window.removeEventListener('load', load, false);               
+  setTimeout(function(){loader.style.display = 'none'},3000);
+
+},false);
+
+    </script>
+
+    <script>
         // Set the date we're counting down to
         var countDownDate = new Date("Feb 25, 2023 15:37:25").getTime();
         
@@ -662,6 +713,16 @@ startup@nitdelhi.ac.in
                 nav.classList.remove('bg-dark','shadow');
             }
         });
+    </script>
+
+    <script type="text/javascript">
+        function toggle(){
+            var trailer=document.querySelector(".trailer")
+            var video = document.querySelector("video")
+            trailer.classList.toggle("active");
+            video.pause();
+            video.currentTime=0;
+        }
     </script>
 
 <script>
