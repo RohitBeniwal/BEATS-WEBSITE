@@ -5864,3 +5864,42 @@ h6 {
   font-size: larger;
   color: rgb(71, 48, 68);
 }
+
+/*  nav bar on small */
+ 
+@media (min-width: 576px) {
+  
+  .small_screen_navbar{
+    display: none;
+  }
+  /* .beats_small_screen{
+    padding-top: 12px !important;
+    } */
+}
+@media (max-width: 576px) {
+  .large_screen_navbar{
+    display: none !important;
+  }
+  .small_screen_navbar{
+    display: block !important;
+    display: absolute;
+    /* height: 70px; */
+  }
+  .video{
+    width: 80%;
+    height: 100%;
+   }
+ 
+  /* .beats_small_screen{
+    padding-top: 12px !important;
+    } */
+}
+
+.button_beats{
+  display: flex !important;
+ }
+
+
+ 
+
+ 
